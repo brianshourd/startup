@@ -45,6 +45,7 @@ def browseCourses(request):
 #View function to view a course page. Renders 'courses/viewCourseEnrolled.html' with context 'course' if the user is enrolled. 'courses/viewCourseSplash.html' with context course otherwise.
 def viewCourse(request, courseURL):
     #try:
+        print "YEP"
         course = Course.objects.get(url=courseURL)
         lessons = Lesson.objects.filter(course=course)
         if request.user in course.students.all():

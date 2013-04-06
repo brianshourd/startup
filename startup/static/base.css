@@ -5,3 +5,11 @@ body {
 .open .dropdown-menu {
     left: -125%;
 }
+.navbar-form {
+margin-bottom: 20px;
+}
+
+#video {
+    text-align:center;
+}
+
