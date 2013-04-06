@@ -52,15 +52,26 @@ def viewCourse(request, courseURL):
             return render_to_response('courses/viewCourseSplash.html', {'course':course},context_instance=RequestContext(request))        
    #except DoesNoExist:
 
+def enroll(request, courseURL):
+    course=Course.objects.get(url=courseURL)
+    if request.user.is_authenticated:
+        enrolled = CourseEnrollment.objects.filter(student=request.user, course=course)
+        if enrolled:
+            return render_to_response('courses/enroll.html', {'prevEnrolled':True, 'course':course}, context_instance=RequestContext(request))
+        else:
+            CourseEnrollment.objects.create(student=request.user, course = course, date_enrolled = date.today())
+            return render_to_response('courses/enroll.html', {'justEnrolled':True, 'course':course}, context_instance=RequestContext(request))
+    else:
+        return render_to_response('courses/enroll.html', {'course':course}, context_instance=RequestContext(request))
+        
 #View to render a user's profile. 
 def myCourses(request):
     if request.user.is_authenticated():
         courses = Course.objects.filter(students__username__exact = request.user.username)
-        currentCourses = courses.filter(startDate__lte = date.today())
-        currentCourses =  currentCourses.exclude(endDate__lt = date.today())
-        pastCourses = courses.filter(endDate_lt = date.today())
+        currentCourses =  courses.exclude(endDate__lt = date.today())
+        pastCourses = courses.filter(endDate__lt = date.today())
         pastCourses= pastCourses.order_by('endDate')
-        return render_to_response('myCourses.html', {'currentCourses':currentCourses, 'pastCourses':upcomingCourses}, context_instance = RequestContext(request))
+        return render_to_response('myCourses.html', {'currentCourses':currentCourses, 'pastCourses':pastCourses}, context_instance = RequestContext(request))
     else:
         return render_to_response('myCourses.html', context_instance = RequestContext(request))
 #View function to view a course page. 

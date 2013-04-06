@@ -30,6 +30,7 @@
   <body>
 
     {% block navbar %}
+      <div class="container">
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
         {% if user.is_authenticated %}
@@ -75,7 +76,6 @@
     {% endblock %}<!-- block navbar -->
 
     {% block content %}
-    <div class="container">
 
       <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
@@ -108,9 +108,9 @@
       <hr>
 
       {% block footer %}
-      <footer>
+      <div class="row text-center">
         <p>&copy; Classery 2013</p>
-      </footer>
+      </div>
       {% endblock %}
 
     </div> <!-- /container -->

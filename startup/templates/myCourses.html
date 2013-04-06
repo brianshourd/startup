@@ -8,6 +8,18 @@
     <div class="row">
         <div class="span12">
             <p>You searched for: {{query}}</p>
+        {% if user.is_authenticated %}
+        <div class="span12" id="current">
+            <h1> Current Courses </h1>
+            <hr>
+            {% for course in currentCourses %}
+                <div class="well">
+                    <h3> {{course.name}} </h3> <br>
+                    Instructor(s): {{course.instructors.all}} <br>
+                    Description: {{course.description}} <br>
+                    <a  href="/courses/{{course.url}}/"><button class="btn-primary"> Learn More! </button></a>
+                </div>
+            {% endfor %}
         </div>
         {% if courses %}
         <div class="span12" id="current">
@@ -19,6 +31,8 @@
                     Instructor(s): {{course.instructors.all}} <br>
                     Description: {{course.description}} <br>
                     <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                    Start Date: {{course.startDate}} <br>
+                    <a  href="/courses/{{course.url}}/"> <button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button></a>
                 </div>
             {% endfor %}
         </div>
