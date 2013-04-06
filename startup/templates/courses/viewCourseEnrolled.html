@@ -4,7 +4,18 @@
 <h1>{{course.name}}</h1>
 <hr>
 
-Instructor(s): {% for instructor in course.instructors.all %} {{course.instructor.name}}, {% endfor %} <br>
-
-{% for lesson in course.
+<div class="container">
+    <div class="row">
+        <div class="span9">
+            <div id="instructors" class="hero-unit">
+                Instructor(s): {% for instructor in course.instructors.all %} {{course.instructor.name}}, {% endfor %} <br>
+            </div>
+        </div>
+        <div class="span3">
+            <div>
+                List of courses
+            </div>
+        </div>
+    </div>
+</div>
 

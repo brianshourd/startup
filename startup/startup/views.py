@@ -49,11 +49,23 @@ def viewCourse(request, courseURL):
             return render_to_response('courses/viewCourseSplash.html', {'course':course},context_instance=RequestContext(request))        
    #except DoesNoExist:
 
+<<<<<<< HEAD
 #View to render a user's profile. 
 def viewProfile(request):
     if request.user.is_authenticated():
         courses = Course.objects.filter(students__username__exact = reques.user.username)
         return render_to_response('accounts/viewProfile.html', {'courses':courses}, context_instance = RequestContext(request))
+=======
+#View function to view a course page. 
+def viewLesson(request, courseURL, lessonNumber):
+    #try:
+        course = Course.objects.get(url=courseURL)
+        if request.user in course.students.all():
+            return render_to_response('courses/viewCourseEnrolled.html', context_instance =RequestContext(request))
+        else: #Render 'splash' page for the course
+            return render_to_response('courses/viewCourseSplash.html', {'course':course},context_instance=RequestContext(request))        
+   #except DoesNoExist:
+>>>>>>> ad527e8ed451f7ad42f257e6431966849ae2e315
 
 #View function to handle registration. Renders 'registration/register.html' with additonal context:
     #errors - a list of validation errors for the form
