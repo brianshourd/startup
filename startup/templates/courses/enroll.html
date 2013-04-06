@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %} {{course.name}} {% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        {% if justEnrolled %}
+            <div class="alert success">Congratulations! You are now enrolled in {{course.name}} </div> Go to the <a href="/courses/{{course.url}}"> course home page </a> now. 
+        {% endif %}
+        {% if prevEnrolled %}
+            <div class="alert warning"> You are already enrolled in {{course.name}} </div>
+        {% endif %}
+    {% else %}
+        Please <a href="/accounts/login/"> login </a> to enroll in this course 
+    {% endif %}
+{% endblock %}

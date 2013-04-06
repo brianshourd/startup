@@ -15,7 +15,7 @@
                     <h3> {{course.name}} </h3> <br>
                     Instructor(s): {{course.instructors.all}} <br>
                     Description: {{course.description}} <br>
-                    <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                    <a  href="/courses/{{course.url}}/"><button class="btn-primary"> Learn More! </button></a>
                 </div>
             {% endfor %}
         </div>
@@ -30,7 +30,7 @@
                     Instructor(s): {{course.instructors.all}} <br>
                     Description: {{course.description}} <br>
                     Start Date: {{course.startDate}} <br>
-                    <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                    <a  href="/courses/{{course.url}}/"> <button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button></a>
                 </div>
             {% endfor %}
         </div>
