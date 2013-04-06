@@ -50,15 +50,16 @@ def viewCourse(request, courseURL):
    #except DoesNoExist:
 
 #View to render a user's profile. 
-def viewProfile(request):
+def myCourses(request):
     if request.user.is_authenticated():
         courses = Course.objects.filter(students__username__exact = request.user.username)
         currentCourses = courses.filter(startDate__lte = date.today())
         currentCourses =  currentCourses.exclude(endDate__lt = date.today())
         pastCourses = courses.filter(endDate_lt = date.today())
         pastCourses= pastCourses.order_by('endDate')
-        return render_to_response('accounts/viewProfile.html', {'currentCourses':currentCourses, 'pastCourses':upcomingCourses}, context_instance = RequestContext(request))
-
+        return render_to_response('myCourses.html', {'currentCourses':currentCourses, 'pastCourses':upcomingCourses}, context_instance = RequestContext(request))
+    else:
+        return render_to_response('myCourses.html', context_instance = RequestContext(request))
 #View function to view a course page. 
 def viewLesson(request, courseURL, lessonNumber):
     #try:
