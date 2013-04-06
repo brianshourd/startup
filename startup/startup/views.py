@@ -2,6 +2,9 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.models import User
+
+
 #View function for main page. Renders index.html with no additional context.
 def index(request):
     return render_to_response('index.html', context_instance=RequestContext(request))
@@ -38,7 +41,7 @@ def register(request):
             errors+=['Must enter an Email address']
         #Found an error
         if errors != []:
-            return render_to_response("registration/register.html", {'errors': errors, 'name':request.POST['username'], 'sumName':request.POST['sumName'], 'email':request.POST['email']}, context_instance = RequestContext(request))
+            return render_to_response("registration/register.html", {'errors': errors, 'name':request.POST['username'], 'email':request.POST['email']}, context_instance = RequestContext(request))
         #No errors, create user
         else:
             user = User.objects.create_user(username=request.POST['username'], email=request.POST['email'], password=request.POST['password'])
