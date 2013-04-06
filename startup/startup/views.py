@@ -39,7 +39,7 @@ def browseCourses(request):
     upcomingCourses= upcomingCourses.order_by('startDate')
     return render_to_response('courses/browse.html', {'currentCourses':currentCourses, 'upcomingCourses':upcomingCourses}, context_instance=RequestContext(request))
     
-#View function to view a course page. 
+#View function to view a course page. Renders 'courses/viewCourseEnrolled.html' with context 'course' if the user is enrolled. 'courses/viewCourseSplash.html' with context course otherwise.
 def viewCourse(request, courseURL):
     #try:
         course = Course.objects.get(url=courseURL)
@@ -48,6 +48,12 @@ def viewCourse(request, courseURL):
         else: #Render 'splash' page for the course
             return render_to_response('courses/viewCourseSplash.html', {'course':course},context_instance=RequestContext(request))        
    #except DoesNoExist:
+
+#View to render a user's profile. 
+def viewProfile(request):
+    if request.user.is_authenticated():
+        courses = Course.objects.filter(students__username__exact = reques.user.username)
+        return render_to_response('accounts/viewProfile.html', {'courses':courses}, context_instance = RequestContext(request))
 
 #View function to handle registration. Renders 'registration/register.html' with additonal context:
     #errors - a list of validation errors for the form

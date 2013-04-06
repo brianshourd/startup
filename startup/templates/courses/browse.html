@@ -2,27 +2,43 @@
 
 {% block title %} Browse Courses {% endblock %}
 {% block content %}
-    Current Courses
-    <hr>
-    {% for course in currentCourses %}
-        Course Name: {{course.name}} <br>
-        Course Description: {{course.description}} <br>
-        Course Category: {{course.category}} <br>
-        Course Start Date: {{course.startDate}} <br>
-        Course End Date:: {{course.endDate}}  <br>
-        <a href="/courses/{{course.url}}/">Learn more! </a> <br>
-    {% endfor %}
-    Upcoming Courses 
-    <hr>
-    {% for course in upcomingCourses %}
-        Course Name: {{course.name}} <br>
-        Course Description: {{course.description}} <br>
-        Course Category: {{course.category}} <br>
-        Course Start Date: {{course.startDate}} <br>
-        Course End Date:: {{course.endDate}}  <br>
-        <a href="/courses/{{course.url}}/">Learn more! </a> <br>
-    {% endfor %}
-    Upcoming Courses 
+    <div class="container">
+        <div class="row">
+            <div class="span9" id="activites">
+                <h1> Current Courses! </h1>
+                <hr>
+                {% for course in currentCourses %}
+                    <div class="well">
+                        <h3> {{course.name}} </h3> <br>
+                        Instructor(s): {{course.instructors.all}} <br>
+                        Description: {{course.description}} <br>
+                        <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                    </div>
+                {% endfor %}
+                <h1> Upcoming Courses! </h1>
+                <hr>
+                {% for course in upcomingCourses %}
+                    <div class="well">
+                        <h3> {{course.name}} </h3> <br>
+                        Instructor(s): {{course.instructors.all}} <br>
+                        Description: {{course.description}} <br>
+                        Start Date: {{course.startDate}} <br>
+                        <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="span3" id="search">
+                <form id="searchForm"> <input type="text"> <button type="submit" class="primary" action="/courses/search/">
+            </div>
+            <div class = "span3" id="request">
+                Want to learn something, and we don't offer a course? Request something here!
+                <form id="requestForm"> <input type="textbox"> <button type="submit" class="primary" action="/courses/request/">
+            </div>
+            <div class = "span3" id="mostPopular">
+                <h3> Most popular courses <h3>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 
