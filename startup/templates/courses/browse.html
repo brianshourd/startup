@@ -8,29 +8,18 @@
                 <h1> Current Courses! </h1>
                 <hr>
                 {% for course in currentCourses %}
-                    <div class="well">
-                        <h3> {{course.name}} </h3> <br>
-                        Instructor(s): {{course.instructors.all}} <br>
-                        Description: {{course.description}} <br>
-                        <button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button>
-                    </div>
+                    {% include 'classbox.html' %}
                 {% endfor %}
                 <h1> Upcoming Courses! </h1>
                 <hr>
                 {% for course in upcomingCourses %}
-                    <div class="well">
-                        <h3> {{course.name}} </h3> <br>
-                        Instructor(s): {{course.instructors.all}} <br>
-                        Description: {{course.description}} <br>
-                        Start Date: {{course.startDate}} <br>
-                        <button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button>
-                    </div>
+                    {% include 'classbox.html' %}
                 {% endfor %}
             </div>
             <div class="span3" id="search">
-                <form id="searchForm"> 
+                <form id="searchForm" action="/search" method="get"> 
                     <input type="text" name="query" width="10" value="Search for a class here!"> 
-                    <button type="submit" class="btn-primary" action="/courses/search/">Search </button> 
+                    <button type="submit" class="btn-primary">Search </button> 
                 </form>
             </div>
             <div class = "span3" id="request">

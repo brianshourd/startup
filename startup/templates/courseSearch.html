@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Search: {{query}} {{user.username}} {% endblock %}
+{% block content %}
+<h1>{{course.name}}</h1>
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="span12">
+            <p>You searched for: {{query}}</p>
+        </div>
+        {% if courses %}
+        <div class="span12" id="current">
+            <h1> Results</h1>
+            <hr>
+            {% for course in courses %}
+                <div class="well">
+                    <h3> {{course.name}} </h3> <br>
+                    Instructor(s): {{course.instructors.all}} <br>
+                    Description: {{course.description}} <br>
+                    <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="span12">
+            <p>No results were found</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
+

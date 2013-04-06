@@ -26,6 +26,7 @@ urlpatterns = patterns('',
     url(r'^courses/([^/]*)/lesson/(\d{1,2})/$', viewLesson),
     url(r'^teach/$', teach),
     url(r'^accounts/courses/$', myCourses),
+    url(r'^search/$', courseSearch),
     url(r'^courses/([^/]*)/enroll/$', enroll),
     url(r'^courses/([^/]*)/$', viewCourse),
 )

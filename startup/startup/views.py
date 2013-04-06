@@ -1,8 +1,11 @@
+import re
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
+from django.db.models import Q
 from course.models import Course, Lesson, CourseEnrollment, CourseInstructor
 
 from datetime import date
@@ -117,3 +120,14 @@ def register(request):
 
 def teach(request):
     return render_to_response('courses/teach.html', context_instance=RequestContext(request))
+
+#Search for courses, returns the courseSearch.html template with context
+# The following code is for searching, taken from http://julienphalip.com/post/2825034077/adding-search-to-a-django-site-in-a-snap
+def courseSearch(request):
+#View function to handle the search in the navbar. Renders 'search_form'.html with context 'users'-a list of users matching the search query
+# 'query'-a string of the query that was searched.
+    if request.method=='GET':
+        courses=Course.objects.filter(name__icontains=request.GET['query'])
+    return render_to_response('courseSearch.html', {'courses':courses, 'query':request.GET['query']}, context_instance=RequestContext(request))  
+
+
