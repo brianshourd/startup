@@ -5,7 +5,14 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 
 
-#View function for main page. Renders index.html with no additional context.
+#View function for main page. May render splash or index
+def splash(request):
+    if request.user.is_authenticated():
+        return render_to_response('index.html', context_instance=RequestContext(request))
+    else:
+        return render_to_response('splash.html', context_instance=RequestContext(request))
+
+#Always return the index page
 def index(request):
     return render_to_response('index.html', context_instance=RequestContext(request))
 

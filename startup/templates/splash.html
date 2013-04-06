@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Classery - the Consierge of Knowledge{% endblock %}
+
+{% block navbar %}
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Log in</button>
+            </form>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row">
+      <div class="span6">
+          <div class="hero-unit">
+              <h1><a href="accounts/register/">Sign Up</a></h2>
+              <h2>(it's free)</h2>
+          </div>
+      </div>
+      <div class="span6">
+          <div class="hero-unit">
+              <h1><a href="index.html">Tell Me More</a></h2>
+          </div>
+      </div>
+  </div>
+</div>
+{% endblock %}
+
