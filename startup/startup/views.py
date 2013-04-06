@@ -52,7 +52,7 @@ def viewCourse(request, courseURL):
 #View to render a user's profile. 
 def viewProfile(request):
     if request.user.is_authenticated():
-        courses = Course.objects.filter(students__username__exact = reques.user.username)
+        courses = Course.objects.filter(students__username__exact = request.user.username)
         currentCourses = courses.filter(startDate__lte = date.today())
         currentCourses =  currentCourses.exclude(endDate__lt = date.today())
         upcomingCourses = courses.filter(startDate__gt = date.today())
@@ -101,3 +101,5 @@ def register(request):
             return render_to_response("registration/register.html", {'registered':True},context_instance = RequestContext(request)) 
     return render_to_response("registration/register.html", context_instance = RequestContext(request))
 
+def teach(request):
+    return render_to_response('courses/teach.html', context_instance=RequestContext(request))

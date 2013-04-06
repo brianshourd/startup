@@ -12,7 +12,7 @@
                         <h3> {{course.name}} </h3> <br>
                         Instructor(s): {{course.instructors.all}} <br>
                         Description: {{course.description}} <br>
-                        <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                        <button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button>
                     </div>
                 {% endfor %}
                 <h1> Upcoming Courses! </h1>
@@ -23,21 +23,21 @@
                         Instructor(s): {{course.instructors.all}} <br>
                         Description: {{course.description}} <br>
                         Start Date: {{course.startDate}} <br>
-                        <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                        <button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button>
                     </div>
                 {% endfor %}
             </div>
             <div class="span3" id="search">
                 <form id="searchForm"> 
-                    <input type="text" name="query" width="10"> 
-                    <button type="submit" class="primary" action="/courses/search/">Search </button> 
+                    <input type="text" name="query" width="10" value="Search for a class here!"> 
+                    <button type="submit" class="btn-primary" action="/courses/search/">Search </button> 
                 </form>
             </div>
             <div class = "span3" id="request">
                 Want to learn something, and we don't offer a course? Request something here!
                 <form id="requestForm"> 
                     <textarea cols="40" rows= "5" name="request"> Type out your request here! </textarea>
-                    <button type="submit" class="primary" action="/courses/request/"> Submit </button>
+                    <button type="submit" class="btn-primary" action="/courses/request/"> Submit </button>
                 </form>
             </div>
             <div class = "span3" id="mostPopular">
