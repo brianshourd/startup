@@ -10,9 +10,15 @@
                 {% for course in currentCourses %}
                     <div class="well">
                         <h3> {{course.name}} </h3> <br>
-                        Instructor(s): {{course.instructors.all}} <br>
+                        Instructor(s): 
+                            <ul>
+                                {% for instructor in course.instructors.all %}
+                                <li>{{instructor.username}}</li>
+                                {% endfor %}
+                            </ul>
+                        <br>
                         Description: {{course.description}} <br>
-                        <button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                        <a href="/courses/{{course.url}}/"><button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button></a>
                     </div>
                 {% endfor %}
                 <h1> Upcoming Courses! </h1>
@@ -20,17 +26,23 @@
                 {% for course in upcomingCourses %}
                     <div class="well">
                         <h3> {{course.name}} </h3> <br>
-                        Instructor(s): {{course.instructors.all}} <br>
+                        Instructor(s): 
+                            <ul>
+                                {% for instructor in course.instructors.all %}
+                                <li>{{instructor.username}}</li>
+                                {% endfor %}
+                            </ul>
+                        <br>
                         Description: {{course.description}} <br>
                         Start Date: {{course.startDate}} <br>
-                        <button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                        <a href="/courses/{{course.url}}"><button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button></a>
                     </div>
                 {% endfor %}
             </div>
             <div class="span3" id="search">
-                <form id="searchForm"> 
+                <form id="searchForm" action="/search" method="get"> 
                     <input type="text" name="query" width="10" value="Search for a class here!"> 
-                    <button type="submit" class="btn-primary" action="/courses/search/">Search </button> 
+                    <button type="submit" class="btn-primary">Search </button> 
                 </form>
             </div>
             <div class = "span3" id="request">
