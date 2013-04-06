@@ -55,9 +55,9 @@ def myCourses(request):
         courses = Course.objects.filter(students__username__exact = request.user.username)
         currentCourses = courses.filter(startDate__lte = date.today())
         currentCourses =  currentCourses.exclude(endDate__lt = date.today())
-        pastCourses = courses.filter(endDate_lt = date.today())
+        pastCourses = courses.filter(endDate__lt = date.today())
         pastCourses= pastCourses.order_by('endDate')
-        return render_to_response('myCourses.html', {'currentCourses':currentCourses, 'pastCourses':upcomingCourses}, context_instance = RequestContext(request))
+        return render_to_response('myCourses.html', {'currentCourses':currentCourses, 'pastCourses':pastCourses}, context_instance = RequestContext(request))
     else:
         return render_to_response('myCourses.html', context_instance = RequestContext(request))
 #View function to view a course page. 
