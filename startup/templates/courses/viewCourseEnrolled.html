@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %} {{course.name}} {% endblock %}
+{% block content %}
+<h1>{{course.name}}</h1>
+<hr>
+
+Instructor(s): {% for instructor in course.instructors.all %} {{course.instructor.name}}, {% endfor %} <br>
+
+{% for lesson in course.
+
