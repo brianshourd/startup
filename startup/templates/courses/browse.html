@@ -4,7 +4,7 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="span9" id="activites">
+            <div class="span9" id="activities">
                 <h1> Current Courses! </h1>
                 <hr>
                 {% for course in currentCourses %}
@@ -28,14 +28,20 @@
                 {% endfor %}
             </div>
             <div class="span3" id="search">
-                <form id="searchForm"> <input type="text"> <button type="submit" class="primary" action="/courses/search/">
+                <form id="searchForm"> 
+                    <input type="text" name="query" width="10"> 
+                    <button type="submit" class="primary" action="/courses/search/">Search </button> 
+                </form>
             </div>
             <div class = "span3" id="request">
                 Want to learn something, and we don't offer a course? Request something here!
-                <form id="requestForm"> <input type="textbox"> <button type="submit" class="primary" action="/courses/request/">
+                <form id="requestForm"> 
+                    <textarea cols="40" rows= "5" name="request"> Type out your request here! </textarea>
+                    <button type="submit" class="primary" action="/courses/request/"> Submit </button>
+                </form>
             </div>
             <div class = "span3" id="mostPopular">
-                <h3> Most popular courses <h3>
+                <h3> Most popular Courses: <h3>
             </div>
         </div>
     </div>
