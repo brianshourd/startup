@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %} Classery - {{user.username}} {% endblock %}
+{% block content %}
+<h1>{{course.name}}</h1>
+<hr>
+
+<div class="container">
+    <div class="row">
+        <div class="span12" id="current">
+            <h1> Current Courses </h1>
+            <hr>
+            {% for course in currentCourses %}
+                <div class="well">
+                    <h3> {{course.name}} </h3> <br>
+                    Instructor(s): {{course.instructors.all}} <br>
+                    Description: {{course.description}} <br>
+                    <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="row">
+        <div class="span12" id="upcoming">
+            <h1> Past Courses </h1>
+            <hr>
+            {% for course in pastCourses %}
+                <div class="well">
+                    <h3> {{course.name}} </h3> <br>
+                    Instructor(s): {{course.instructors.all}} <br>
+                    Description: {{course.description}} <br>
+                    Start Date: {{course.startDate}} <br>
+                    <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
