@@ -2,21 +2,18 @@
 {% block title %} Classery - {{user.username}} {% endblock %}
 {% block content %}
 <h1>{{course.name}}</h1>
-<hr>
 
 <div class="container">
     <div class="row">
         {% if user.is_authenticated %}
         <div class="span12" id="current">
             <h1> Current Courses </h1>
-            <hr>
             {% for course in currentCourses %}
                 {% include 'classbox.html' %}
             {% endfor %}
         </div>
         <div class="span12" id="current">
             <h1> Past Courses </h1>
-            <hr>
             {% for course in pastCourses %}
                 {% include classbox.html %}
             {% endfor %}

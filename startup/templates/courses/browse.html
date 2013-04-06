@@ -5,32 +5,36 @@
     <div class="container">
         <div class="row">
             <div class="span9" id="activities">
-                <h1> Current Courses! </h1>
-                <hr>
+                <h1> Current Courses </h1>
                 {% for course in currentCourses %}
                     {% include 'classbox.html' %}
                 {% endfor %}
-                <h1> Upcoming Courses! </h1>
-                <hr>
+                <h1> Upcoming Courses </h1>
                 {% for course in upcomingCourses %}
                     {% include 'classbox.html' %}
                 {% endfor %}
             </div>
             <div class="span3" id="search">
-                <form id="searchForm" action="/search" method="get"> 
-                    <input type="text" name="query" width="10" value="Search for a class here!"> 
-                    <button type="submit" class="btn-primary">Search </button> 
-                </form>
+                <div class="well">
+                    <form id="searchForm" action="/search" method="get"> 
+                        <input type="text" name="query" width="10" value="Search for a class here!"> 
+                        <button type="submit" class="btn-primary">Search </button> 
+                    </form>
+                </div>
             </div>
             <div class = "span3" id="request">
-                Want to learn something, and we don't offer a course? Request something here!
-                <form id="requestForm"> 
-                    <textarea cols="40" rows= "5" name="request"> Type out your request here! </textarea>
-                    <button type="submit" class="btn-primary" action="/courses/request/"> Submit </button>
-                </form>
+                <div class="well">
+                    Want to learn something, and we don't offer a course? Request something here!
+                    <form id="requestForm"> 
+                        <textarea cols="40" rows= "5" name="request"> Type out your request here! </textarea>
+                        <button type="submit" class="btn-primary" action="/courses/request/"> Submit </button>
+                    </form>
+                </div>
             </div>
             <div class = "span3" id="mostPopular">
-                <h3> Most popular Courses: <h3>
+                <div class="well">
+                    <h3> Most popular Courses: <h3>
+                </div>
             </div>
         </div>
     </div>

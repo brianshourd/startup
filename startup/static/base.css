@@ -13,3 +13,49 @@ margin-bottom: 20px;
     text-align:center;
 }
 
+a {
+color: white;
+text-decoration: none;
+}
+
+.navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover {
+color: #98BED3;
+background-color: transparent;
+}
+
+.navbar-inverse .nav > li > a {
+color: #ffffff;
+text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.well {
+    background-color: #E0E6E9;
+    color: #595959;
+}
+
+h1 {
+    color: #595959;
+    size: 60px;
+}
+
+.btn-primary {
+    background-image: -webkit-linear-gradient(top, #98BED3, #98BED3);
+    background-color: #98BED3;
+}
+
+.navbar-inverse .navbar-inner {
+    background-color:#595959;
+    background-image: none;
+    border-color:#595959;
+}
+
+.navbar-inverse .brand {
+color: #ffffff;
+}
+.navbar-incerse .brand > a:hover {
+color: #98BED3; 
+}
+
+.hero-unit {
+    color:#595959;
+}
