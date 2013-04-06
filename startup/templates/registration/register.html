@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}Register new account{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+        <p>Please <a href="/accounts/logout/"> log out </a> to register a new account </p>
+    {% else %}
+        <h3> Create an account </h3>
+        <hr>
+        {% if registered %}
+            <div class="alert alert-success"> You have registered successfully. Please check your email to confirm your account so you can log in! </div>
+        {% else %}
+            <form action="" method="post" class="form-horizontal">{% csrf_token %}
+                <fieldset>
+                    {% if errors %}
+                          {% for error in errors %}
+                            <div class="alert alert-error"> {{error}} </div>
+                          {% endfor %}
+                    {% endif %}
+                    <div class="control-group">
+                        <label for="username" class="control-label"> Username: </label>
+                        <div class="controls">
+                            <input type="text" name="username" maxlength="20" value={{name}}>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="password" class="control-label"> Password: </label>
+                        <div class="controls">
+                            <input type="password" name="password" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="confirmPassword" class="control-label"> Confirm Password: </label>
+                        <div class="controls">
+                            <input type="password" name="confirmPassword" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label for="email" class="control-label"> Email: </label>
+                        <div class="controls">
+                            <input type="email" name="email" value={{email}}>
+                             We will never abuse your email, it is only for updates, resetting your password, etc.
+                        </div>
+                    </div>
+                    <div class="controls">
+                        <button type="submit" class="btn"> Submit </button>
+                    </div>
+                </fieldset>
+            </form>
+        {% endif %}    
+    {% endif %}
+{% endblock %}
+
