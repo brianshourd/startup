@@ -8,35 +8,12 @@
                 <h1> Current Courses! </h1>
                 <hr>
                 {% for course in currentCourses %}
-                    <div class="well">
-                        <h3> {{course.name}} </h3> <br>
-                        Instructor(s): 
-                            <ul>
-                                {% for instructor in course.instructors.all %}
-                                <li>{{instructor.username}}</li>
-                                {% endfor %}
-                            </ul>
-                        <br>
-                        Description: {{course.description}} <br>
-                        <a href="/courses/{{course.url}}/"><button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button></a>
-                    </div>
+                    {% include 'classbox.html' %}
                 {% endfor %}
                 <h1> Upcoming Courses! </h1>
                 <hr>
                 {% for course in upcomingCourses %}
-                    <div class="well">
-                        <h3> {{course.name}} </h3> <br>
-                        Instructor(s): 
-                            <ul>
-                                {% for instructor in course.instructors.all %}
-                                <li>{{instructor.username}}</li>
-                                {% endfor %}
-                            </ul>
-                        <br>
-                        Description: {{course.description}} <br>
-                        Start Date: {{course.startDate}} <br>
-                        <a href="/courses/{{course.url}}"><button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button></a>
-                    </div>
+                    {% include 'classbox.html' %}
                 {% endfor %}
             </div>
             <div class="span3" id="search">
