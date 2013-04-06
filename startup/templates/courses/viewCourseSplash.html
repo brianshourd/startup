@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} {{course.name}} {% endblock %}
+{% block content %}
+    <h1> {{course.name}} </h1>
+    <hr>
+    Instructor(s): {% for instructor in course.instructors.all %} {{course.instructor.name}}, {% endfor %} <br>
+    Description: {{course.description }} <br>
+    Start Date: {{course.startDate}} <br>
+    End Date: {{course.startDate}} <br>
+    <br>
+    INTRO VIDEO HERE
+    <br>
+    <br>
+    <button class-"primary" href ="/courses/{{course.url}}/signup/"> SIGN UP! </button>
+{% endblock %}
+    
