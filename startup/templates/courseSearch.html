@@ -14,12 +14,7 @@
             <h1> Results</h1>
             <hr>
             {% for course in courses %}
-                <div class="well">
-                    <h3> {{course.name}} </h3> <br>
-                    Instructor(s): {{course.instructors.all}} <br>
-                    Description: {{course.description}} <br>
-                    <button class="primary" href="/courses/{{course.url}}/"> Learn More! </button>
-                </div>
+                {% include 'classbox.html' %}
             {% endfor %}
         </div>
         {% else %}

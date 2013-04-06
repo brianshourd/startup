@@ -34,12 +34,12 @@
       <div class="masthead">
         <ul class="nav nav-pills pull-right">
         {% if user.is_authenticated %}
-          <li> <a href="/accounts/profile">{{user.username}}'s Classes</a> </li>
+          <li> <a href="/accounts/courses">{{user.username}}'s Classes</a> </li>
           <li> <a href="/accounts/logout">Log Out</a> </li>
         {% else %}
           <li><a href="/accounts/register">Sign Up</a></li>
             <li class="divider-vertical"></li>
-            <li class="dropdown">
+            <li class="dropdown open">
               <a class="dropdown-toggle" href="#" data-toggle="dropdown">Sign In <strong class="caret"></strong></a>
               <div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
                  <form class="form-inline navbar-form pull-right" action="/accounts/login/" method="post" > {% csrf_token %}
