@@ -46,15 +46,16 @@ def browseCourses(request):
 def viewCourse(request, courseURL):
     #try:
         course = Course.objects.get(url=courseURL)
+        lessons = Lesson.objects.filter(course=course)
         if request.user in course.students.all():
-            return render_to_response('courses/viewCourseEnrolled.html', context_instance =RequestContext(request))
+            return render_to_response('courses/viewCourseEnrolled.html', {'course':course, 'lessons':lessons}, context_instance =RequestContext(request))
         else: #Render 'splash' page for the course
-            return render_to_response('courses/viewCourseSplash.html', {'course':course},context_instance=RequestContext(request))        
+            return render_to_response('courses/viewCourseSplash.html', {'course':course, 'lessons':lessons},context_instance=RequestContext(request))        
    #except DoesNoExist:
 
 def enroll(request, courseURL):
     course=Course.objects.get(url=courseURL)
-    if request.user.is_authenticated:
+    if request.user.is_authenticated():
         enrolled = CourseEnrollment.objects.filter(student=request.user, course=course)
         if enrolled:
             return render_to_response('courses/enroll.html', {'prevEnrolled':True, 'course':course}, context_instance=RequestContext(request))
@@ -78,10 +79,11 @@ def myCourses(request):
 def viewLesson(request, courseURL, lessonNumber):
     #try:
         course = Course.objects.get(url=courseURL)
-        if request.user in course.students.all():
-            return render_to_response('courses/viewCourseEnrolled.html', context_instance =RequestContext(request))
-        else: #Render 'splash' page for the course
-            return render_to_response('courses/viewCourseSplash.html', {'course':course},context_instance=RequestContext(request))        
+        lesson = Lesson.objects.get(course=course, number = lessonNumber)
+        if request.user.is_authenticated() and CourseEnrollment.objects.filter(course=course, student=request.user):
+            return render_to_response('courses/%sLesson%d.html' %(course.url, lesson.number), {'course':course, 'lesson':lesson}, context_instance=RequestContext(request))
+        else:
+            return render_to_response('courses/%sLesson%d.html' %(course.url, lesson.number), {'course':course, 'lesson':lesson, 'notEnrolled': True}, context_instance=RequestContext(request)  )
    #except DoesNoExist:
 
 #View function to handle registration. Renders 'registration/register.html' with additonal context:

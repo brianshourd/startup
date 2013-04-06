@@ -10,6 +10,13 @@
             <div id="instructors" class="hero-unit">
                 Instructor(s): {% for instructor in course.instructors.all %} {{course.instructor.name}}, {% endfor %} <br>
             </div>
+            {% for lesson in lessons %}
+            <div class="well">
+                    <h3> Lesson {{lesson.number}}: {{lesson.name}} </h3>
+                    <p> {{lesson.description}} </p>
+                    <a href="/courses/{{course.url}}/lesson/{{lesson.number}}"><button class="btn-primary">Go to this Lesson </button></a>
+            </div>
+            {% endfor %}
         </div>
         <div class="span3">
             <div>
