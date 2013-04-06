@@ -2,8 +2,10 @@
 {% block title %} Log in {% endblock %}
 {% block content %}
   <div class="row">
-    <h3> Log in </h3>
-    <hr>
+    <div class="span12">
+        <h3> Log in </h3>
+        <hr>
+    </div>
   </div>
   {% if not user.is_authenticated %}
     {% if error %}
