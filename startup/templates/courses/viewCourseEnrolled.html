@@ -2,13 +2,11 @@
 {% block title %} {{course.name}} {% endblock %}
 {% block content %}
 <h1>{{course.name}}</h1>
-<hr>
-
 <div class="container">
     <div class="row">
         <div class="span9">
-            <div id="instructors" class="hero-unit">
-                Instructor(s): {% for instructor in course.instructors.all %} {{course.instructor.name}}, {% endfor %} <br>
+            <div class="well">
+                Instructor(s): {% for instructor in course.instructors.all %} {{instructor.username}}, {% endfor %} <br>
             </div>
             {% for lesson in lessons %}
             <div class="well">
@@ -19,7 +17,7 @@
             {% endfor %}
         </div>
         <div class="span3">
-            <div>
+            <div class="well">
                 List of courses
             </div>
         </div>
