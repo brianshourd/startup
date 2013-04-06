@@ -5,6 +5,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.models import User
 from course.models import Course, Lesson, CourseEnrollment, CourseInstructor
 
+from datetime import date
 #View function for main page. May render splash or index
 def splash(request):
     if request.user.is_authenticated():
@@ -28,8 +29,15 @@ def auth_login(request):
     else:
         return render_to_response('registration/login.html', context_instance=RequestContext(request))
     
+#View function to display available courses. Renders 'courses/browse.html' with additional context
+    #currentCourses = a list of currently available Course Objects
+    #upcomingCourses = a list of upcoming Course objects
+    
 def browseCourses(request):
-    return 1
+    currentCourses = Course.objects.filter(startDate__lte = date.today())
+    currentCourses =  currentCourses.exclude(endDate__lt = date.today())
+    upcomingCourses = Course.objects.filter(startDate__gt = date.today())
+    return render_to_response('courses/browse.html', {'currentCourses':currentCourses, 'upcomingCourses':upcomingCourses}, context_instance=RequestContext(request))
     
 
 #View function to handle registration. Renders 'registration/register.html' with additonal context:

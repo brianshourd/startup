@@ -22,4 +22,5 @@ urlpatterns = patterns('',
     url(r'^accounts/register/$', register),
     url(r'^accounts/logout/', logout),
     url(r'^accounts/login/', auth_login),
+    url(r'^courses/browse/', browseCourses),
 )

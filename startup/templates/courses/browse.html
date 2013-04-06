@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Browse Courses {% endblock %}
+{% block content %}
+    Current Courses
+    <hr>
+    {% for course in currentCourses %}
+        Course Name: {{course.name}} <br>
+        Course Description: {{course.description}} <br>
+        Course Category: {{course.category}} <br>
+        Course Start Date: {{course.startDate}} <br>
+        Course End Date:: {{course.endDate}}  <br>
+        <a href="/courses/{{course.url}}/">Learn more! </a> <br>
+    {% endfor %}
+{% endblock %}
+
+
