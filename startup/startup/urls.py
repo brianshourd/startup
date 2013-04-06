@@ -24,9 +24,6 @@ urlpatterns = patterns('',
     url(r'^accounts/login/$', auth_login),
     url(r'^courses/browse/$', browseCourses),
     url(r'^courses/(.{1,20})/$', viewCourse),
-<<<<<<< HEAD
     url(r'^accounts/profile/$', viewProfile),
-=======
     url(r'^courses/(.{1,20})/lesson/(/d{1,2})/$', viewLesson),
->>>>>>> ad527e8ed451f7ad42f257e6431966849ae2e315
 )
