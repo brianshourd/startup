@@ -131,4 +131,7 @@ def courseSearch(request):
         courses=Course.objects.filter(name__icontains=request.GET['query'])
     return render_to_response('courseSearch.html', {'courses':courses, 'query':request.GET['query']}, context_instance=RequestContext(request))  
 
+#Pretends like the upload was a success, returning upload.html with context
+def upload(request):
+    return render_to_response('uploadSuccess.html', context_instance=RequestContext(request))
 

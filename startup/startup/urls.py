@@ -29,4 +29,5 @@ urlpatterns = patterns('',
     url(r'^search/$', courseSearch),
     url(r'^courses/([^/]*)/enroll/$', enroll),
     url(r'^courses/([^/]*)/$', viewCourse),
+    url(r'^upload/$', upload),
 )
