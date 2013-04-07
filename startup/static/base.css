@@ -59,3 +59,10 @@ color: #98BED3;
 .hero-unit {
     color:#595959;
 }
+
+#sidebar {
+    position: fixed;
+    right: 130px;
+    text-align: right;
+    top: 80px;
+}
