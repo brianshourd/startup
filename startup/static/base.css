@@ -81,7 +81,8 @@ p {
 }
 
 #brian {
-    height:200px;
+    height:300px;
+    float:right;
 }
 
 #descript {
@@ -90,6 +91,6 @@ p {
 #sidebar {
     position: fixed;
     right: 130px;
-    text-align: right;
+    text-align: center;
     top: 80px;
 }
