@@ -45,6 +45,8 @@ def browseCourses(request):
 def demo(request):
     return render_to_response('courses/woodworkingCourse.html', context_instance=RequestContext(request))
     
+def demoLesson(request):
+    return render_to_response('courses/hand-tool-woodworkinLesson1.html', context_instance=RequestContext(request))
 #View function to view a course page. Renders 'courses/viewCourseEnrolled.html' with context 'course' if the user is enrolled. 'courses/viewCourseSplash.html' with context course otherwise.
 def viewCourse(request, courseURL):
     #try:

@@ -114,7 +114,7 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     '/home/hank/Desktop/startup/startup/templates',
 )
-
+LOGIN_REDIRECT_URL = '/courses/browse/'
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
