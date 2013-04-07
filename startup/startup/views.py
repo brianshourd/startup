@@ -11,10 +11,10 @@ from course.models import Course, Lesson, CourseEnrollment, CourseInstructor
 from datetime import date
 #View function for main page. May render splash or index
 def splash(request):
-    if request.user.is_authenticated():
+    #if request.user.is_authenticated():
         return render_to_response('index.html', context_instance=RequestContext(request))
-    else:
-        return render_to_response('splash.html', context_instance=RequestContext(request))
+    #else:
+    #    return render_to_response('splash.html', context_instance=RequestContext(request))
 
 #Always return the index page. Renders 'index.html' with no additional context. 
 def index(request):
@@ -36,6 +36,7 @@ def auth_login(request):
     #currentCourses = a list of currently available Course Objects
     #upcomingCourses = a list of upcoming Course objects
 def browseCourses(request):
+    return render_to_response('courses/browseDemo.html', context_instance=RequestContext(request))
     currentCourses = Course.objects.filter(startDate__lte = date.today())
     currentCourses =  currentCourses.exclude(endDate__lt = date.today())
     upcomingCourses = Course.objects.filter(startDate__gt = date.today())
