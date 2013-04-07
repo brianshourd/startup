@@ -72,6 +72,7 @@ color: #98BED3;
     color:#595959;
 }
 
+<<<<<<< HEAD
 h2 {
     color:#595959;
 }
@@ -86,4 +87,11 @@ p {
 
 #descript {
     text-align:left;
+=======
+#sidebar {
+    position: fixed;
+    right: 130px;
+    text-align: right;
+    top: 80px;
+>>>>>>> 4c75bc8835bb59d7eb3f08920dd26455ce1ea108
 }

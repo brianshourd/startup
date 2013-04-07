@@ -1,13 +1,13 @@
 <div class="well">
-    <h3> {{course.name}} </h3> <br>
-    Instructor(s): 
+    <h1> {{course.name}} </h1> <br>
+    <h2>Description:</h2> {{course.description}} <br>
+    <h2>Instructor(s): </h2>
         <ul>
             {% for instructor in course.instructors.all %}
             <li>{{instructor.username}}</li>
             {% endfor %}
         </ul>
     <br>
-    Description: {{course.description}} <br>
-    <a href="/courses/{{course.url}}/"><button class="btn-primary" href="/courses/{{course.url}}/"> Learn More! </button></a>
+    <a href="/courses/{{course.url}}/"><button class="btn-primary" href="/courses/{{course.url}}/">Go to Class</button></a>
 </div>
 
