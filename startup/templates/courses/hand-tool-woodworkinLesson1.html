@@ -1,26 +1,9 @@
 {% extends 'base.html' %}
 {% block title %} {{course.name}}: Lesson {{lesson.number}}: {{lesson.name}} {% endblock %}
 {% block content %}
-<h1>{{course.name}}<h1>
-<h2> Lesson {{lesson.number}}: {{lesson.name}}</h2>
 
 <div class="container">
-    <div class="row">
-        <div class="span9">
-            <div id="video">
-                <iframe width="560" height="315" src="http://www.youtube.com/embed/rZtLMHk6Smo?list=UUn1dXKStkuDLL5qLTDFwOBQ" frameborder="0" allowfullscreen></iframe>
-            </div>
-            <div>
-                HOMEWORK
-            </div>
-        </div>
-        <div class="span3">
-            <div class="well">
-                Join the Discussion Below
-                <iframe src="http://webchat.quakenet.org/?channels=swnd&uio=d4" width="200" height="400"></iframe>
-            </div>
-        </div>
-    </div>
+    <img src="/static/images/lessonPage.png"></img>
 </div>
 {% endblock %}
 <
