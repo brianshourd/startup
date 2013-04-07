@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %} {{course.name}} {% endblock %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="span2">
+        </div>
+        <div class="span8" style="text-align:center">
+            <h1>Wordworking with hand tools</h1>
+        </div>
+        <div class="span2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="span2">
+        </div>
+        <div class="span8">
+            <div class = "well" id="descript">
+                <p> Instructor: Brian Shourd </p> 
+                <img id="brian" src="/static/headshot.jpg"> </img>
+                <p> Description: Come learn basic wood working skills with traditional hand tools. No power tools allowed! </p>
+                <p> Start Date: April 6th, 2013 </p>
+                <p> End Date: April 12th, 2013 </p>
+            </div>
+            <div class="well">
+                <h1> Lesson 1: Sharpening </h1>
+                <p> Basic coverage of common hand tools, how to care for them, and safety procedures. </p>
+                <a href="/courses/hand-tool-woodworkin/lesson/1/"> <button class="btn-primary"> Get Started </button> </a> 
+            </div>
+            <div class="well">
+                <h1> Lesson 2: Saws </h1>
+                <p> All about saws. Learn to use backsaws and panel saws to dimension stock. </p>
+                <a href="/courses/hand-tool-woodworkin/lesson/1/"> <button class="btn-primary"> Get Started! </button> </a> 
+            </div>
+            <div class="well">
+                <h1> Lesson 3: Final Dimensioning with Planes </h1>
+                <p> Learn how to use the jointer plane and the jack plane to bring to stock to final dimensions. </p>
+                <a href="/courses/hand-tool-woodworkin/lesson/1/"> <button class="btn-primary"> Get Started! </button> </a> 
+            </div>
+        </div>
+        <div class="span2">
+        </div>
+        <!--
+        <div class="span5">
+            <div class="well">
+                <a href="/courses/hang-tool-woodworkin/lesson/1/"> <button class="btn-warning"> Most Recent Lesson </button></a>
+            </div>
+            <div class="well">
+                
+            </div>
+        </div>
+        -->
+    </div>
+</div>
+{% endblock %}
+<

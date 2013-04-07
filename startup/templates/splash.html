@@ -2,44 +2,20 @@
 
 {% block title %}Classery - the Consierge of Knowledge{% endblock %}
 
-{% block navbar %}
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-            <form class="navbar-form pull-right">
-              <input class="span2" type="text" placeholder="Email">
-              <input class="span2" type="password" placeholder="Password">
-              <button type="submit" class="btn">Log in</button>
-            </form>
-          </div><!--/.nav-collapse -->
-        </div>
-      </div>
-    </div>
-{% endblock %}
 
 {% block content %}
 <div class="container">
 
-  <div class="row">
-      <div class="span1"></div>      
-      <div class="span10">
-          <h1>Classery</h1>
-          <h2>The Concierge of Knowledge</h2>
-          <p>Classery let's you take or teach classes on everything that <strong>you</strong> care about - from Runescape to Woodworking</p>
-      </div>
-      <div class="span1"></div>      
-  </div>
 
   <div class="row">
       <div class="span6">
-          <div class="hero-unit">
-              <h1><a href="accounts/register/">Sign Up</a></h2>
-              <h2>(it's free)</h2>
+          <div class="well" id="splashButton" style="padding-top:100px">
+              <h1><a href="accounts/register/">Sign Up</a></h1>
           </div>
       </div>
       <div class="span6">
-          <div class="hero-unit">
-              <h1><a href="index.html">Tell Me More</a></h2>
+          <div class="well" id="splashButton" style="padding-top:100px">
+              <h1><a href="index.html">Tell Me More</a></h1>
           </div>
       </div>
   </div>

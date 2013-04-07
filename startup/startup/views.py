@@ -42,6 +42,9 @@ def browseCourses(request):
     upcomingCourses= upcomingCourses.order_by('startDate')
     return render_to_response('courses/browse.html', {'currentCourses':currentCourses, 'upcomingCourses':upcomingCourses}, context_instance=RequestContext(request))
     
+def demo(request):
+    return render_to_response('courses/woodworkingCourse.html', context_instance=RequestContext(request))
+    
 #View function to view a course page. Renders 'courses/viewCourseEnrolled.html' with context 'course' if the user is enrolled. 'courses/viewCourseSplash.html' with context course otherwise.
 def viewCourse(request, courseURL):
     #try:

@@ -31,17 +31,29 @@ text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 .well {
     background-color: #E0E6E9;
     color: #595959;
+    text-align:center;
+}
+.well > h1 > a {
+    color: #595959;
 }
 
+#splashButton {
+    height: 200px;
+}
 h1 {
     color: #595959;
     size: 60px;
 }
 
 .btn-primary {
-    background-image: -webkit-linear-gradient(top, #98BED3, #98BED3);
+    background-image: none;
     background-color: #98BED3;
 }
+
+.btn-primary:hover{
+    background-color:#98BED3;
+}
+
 
 .navbar-inverse .navbar-inner {
     background-color:#595959;
@@ -52,10 +64,26 @@ h1 {
 .navbar-inverse .brand {
 color: #ffffff;
 }
-.navbar-incerse .brand > a:hover {
+.navbar-inverse > a:hover, .navbar-inverse > a:focus {
 color: #98BED3; 
 }
 
 .hero-unit {
     color:#595959;
+}
+
+h2 {
+    color:#595959;
+}
+
+p {
+    color:#595959;
+}
+
+#brian {
+    height:200px;
+}
+
+#descript {
+    text-align:left;
 }
