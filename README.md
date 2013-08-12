@@ -17,13 +17,13 @@ little in the way of functionality. Hacks and undocumented code abound.
 Team Members
 ============
 
-Brian Shourd - Team Leader/Programmer
-Hank Ditton - Programmer
-Justin Asuncion - Finance / Business 
-Matt Leming - Marketing and Sales
-Chad Arroyo - Strategy / Business Development
-HyeSoo Kim - Design 
-Nicole Timmerman - Design
+* Brian Shourd - Team Leader/Programmer
+* Hank Ditton - Programmer
+* Justin Asuncion - Finance / Business 
+* Matt Leming - Marketing and Sales
+* Chad Arroyo - Strategy / Business Development
+* HyeSoo Kim - Design 
+* Nicole Timmerman - Design
 
 Technical notes
 ===============
