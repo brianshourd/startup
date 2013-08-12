@@ -30,3 +30,9 @@ Technical notes
 
 Built with Django 1.5 and Bootstrap.
 
+Demo
+====
+
+A live demo of this app is available at
+[classery.brianshourd.com](classery.brianshourd.com).
+
