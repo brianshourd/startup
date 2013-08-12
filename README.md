@@ -1,5 +1,5 @@
-startup
-=======
+About
+=====
 
 This project (Classery.co) was created for the Startup Weekend Notre
 Dame hackathon on April 5-7, 2013. Brian Shourd pitched an idea, the
@@ -14,7 +14,8 @@ layout, and proof that this team could actually create the product we
 were pitching. Parts of it are buggy, parts of it are fake, and there is
 little in the way of functionality. Hacks and undocumented code abound.
 
-Members of the team:
+Team Members
+============
 
 Brian Shourd - Team Leader/Programmer
 Hank Ditton - Programmer
@@ -23,4 +24,9 @@ Matt Leming - Marketing and Sales
 Chad Arroyo - Strategy / Business Development
 HyeSoo Kim - Design 
 Nicole Timmerman - Design
+
+Technical notes
+===============
+
+Built with Django 1.5 and Bootstrap.
 
