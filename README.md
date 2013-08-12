@@ -34,5 +34,5 @@ Demo
 ====
 
 A live demo of this app is available at
-[classery.brianshourd.com](classery.brianshourd.com).
+[classery.brianshourd.com](http://classery.brianshourd.com).
 
